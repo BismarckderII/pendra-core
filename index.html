@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pendra Core – Community Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-950 text-white font-sans">
+
+  <!-- Header mit Logo -->
+  <header class="bg-gray-900 py-10 shadow-lg text-center">
+    <img src="img/pendracore-logo.png" alt="Pendra Core Logo"
+         class="mx-auto mb-4 w-32 h-32 object-contain drop-shadow-lg opacity-90">
+    <h1 class="text-4xl font-bold text-indigo-400">Pendra Core</h1>
+    <p class="text-gray-400 mt-2">Die Schnittstelle zwischen Realität und digitalem Raum</p>
+  </header>
+
+  <!-- Drei Hauptboxen -->
+  <main class="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-3 gap-10">
+
+    <!-- Discord Box -->
+    <a href="https://discord.gg/pendracore" target="_blank"
+       class="transition transform hover:scale-105 duration-300 bg-indigo-600 rounded-2xl p-10 text-center shadow-lg">
+      <h2 class="text-2xl font-bold mb-4">🛰️ Discord</h2>
+      <p class="text-lg">Tritt unserem Netzwerk bei. Austausch, Projekte, Organisation.</p>
+    </a>
+
+    <!-- Minecraft Box -->
+    <div onclick="copyIP()"
+         class="cursor-pointer transition transform hover:scale-105 duration-300 bg-green-600 rounded-2xl p-10 text-center shadow-lg">
+      <h2 class="text-2xl font-bold mb-4">🖥️ Minecraft Server</h2>
+      <p class="text-lg">Adresse kopieren:<br><code id="mc-ip">pendracore.g-portal.works</code></p>
+      <p id="copied-msg" class="text-sm mt-2 text-white hidden">✔️ IP kopiert!</p>
+    </div>
+
+    <!-- Info Box -->
+    <a href="#about"
+       class="transition transform hover:scale-105 duration-300 bg-gray-700 rounded-2xl p-10 text-center shadow-lg">
+      <h2 class="text-2xl font-bold mb-4">🔗 Über Pendra Core</h2>
+      <p class="text-lg">Erfahre mehr über die Idee hinter der Community & unsere digitale Infrastruktur.</p>
+    </a>
+  </main>
+
+  <!-- Über-Abschnitt -->
+  <section id="about" class="bg-gray-800 py-16 text-center">
+    <h3 class="text-3xl font-bold mb-4">Was ist Pendra Core?</h3>
+    <p class="max-w-2xl mx-auto text-gray-300">
+      Pendra Core ist ein Community-Projekt, das reale Interessen mit digitalen Räumen verbindet. Ob Gaming, kreative Projekte oder technische Systeme – hier treffen sich Menschen, um gemeinsam an digitalen Konzepten zu arbeiten, sich zu vernetzen und Ideen umzusetzen.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-center text-gray-400 py-6">
+    © 2025 Pendra Core – Entwickelt von [Dein Name oder Team]
+  </footer>
+
+  <!-- Kopierfunktion -->
+  <script>
+    function copyIP() {
+      const ip = "pendracore.g-portal.works";
+      navigator.clipboard.writeText(ip).then(() => {
+        document.getElementById("copied-msg").classList.remove("hidden");
+        setTimeout(() => {
+          document.getElementById("copied-msg").classList.add("hidden");
+        }, 2000);
+      });
+    }
+  </script>
+
+</body>
+</html>
