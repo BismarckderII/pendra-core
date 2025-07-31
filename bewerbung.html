@@ -10,6 +10,27 @@
   <header class="bg-gray-900 py-10 text-center shadow">
     <h1 class="text-4xl font-bold text-indigo-400">Bewerbung</h1>
     <p class="text-gray-400 mt-2">Kontaktformular für Partnerschaft oder Content Creator</p>
+ <!-- Navigation mit zentriertem Dropdown -->
+  <nav class="mt-10">
+    <ul class="flex justify-center space-x-6 text-white font-semibold">
+      <li><a href="/pendra-core/index.html" class="hover:text-indigo-400">Home</a></li>
+
+      <!-- Dropdown-Menü -->
+      <li class="relative group">
+        <button class="hover:text-indigo-400 focus:outline-none">Infos ⌄</button>
+        <div class="absolute left-1/2 transform -translate-x-1/2 mt-2 hidden group-hover:flex group-focus-within:flex flex-col bg-gray-800 rounded shadow-lg z-10 min-w-[220px]">
+          <a href="/pendra-core/partner.html" class="block px-4 py-2 hover:bg-gray-700">Partner-Server</a>
+          <a href="/pendra-core/partner-werden.html" class="block px-4 py-2 hover:bg-gray-700">Wie wird man Partner?</a>
+          <a href="/pendra-core/content-creator.html" class="block px-4 py-2 hover:bg-gray-700">Content Creator werden</a>
+          <a href="/pendra-core/bewerbung.html" class="block px-4 py-2 hover:bg-gray-700">Zum Kontaktformular</a>
+        </div>
+      </li>
+
+      <li><a href="/pendra-core/about.html" class="hover:text-indigo-400">Über uns</a></li>
+    </ul>
+  </nav>
+</header>
+
   </header>
 
   <main class="max-w-3xl mx-auto px-6 py-16">
