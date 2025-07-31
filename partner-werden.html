@@ -7,9 +7,43 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-950 text-white font-sans">
-  <header class="bg-gray-900 py-10 text-center shadow">
-    <h1 class="text-4xl font-bold text-indigo-400">Wie wird man Partner?</h1>
-  </header>
+ <header class="bg-gray-900 py-6 shadow-lg">
+  <div class="max-w-6xl mx-auto flex justify-between items-center px-4">
+    
+    <!-- LOGO + Titel -->
+    <div class="flex items-center space-x-4">
+      <img src="/pendra-core/pendracore-logo.png" alt="Pendra Core Logo" class="w-12 h-12 object-contain">
+      <h1 class="text-2xl font-bold text-indigo-400">Wie wird man Partner?</h1>
+    </div>
+
+    <!-- Navigation mit Dropdown -->
+    <nav class="relative">
+      <ul class="flex space-x-6 text-white font-semibold">
+        <li>
+          <a href="/pendra-core/index.html" class="hover:text-indigo-400">Home</a>
+        </li>
+        <li class="relative group">
+          <button class="hover:text-indigo-400">Infos ⌄</button>
+          <ul class="absolute hidden group-hover:flex flex-col bg-gray-800 rounded shadow-lg top-8 right-0 min-w-[220px] z-10">
+            <li>
+              <a href="/pendra-core/partner.html" class="block px-4 py-2 hover:bg-gray-700">Partner-Server</a>
+            </li>
+            <li>
+              <a href="/pendra-core/partner-werden.html" class="block px-4 py-2 hover:bg-gray-700">Wie wird man Partner?</a>
+            </li>
+            <li>
+              <a href="/pendra-core/content-creator.html" class="block px-4 py-2 hover:bg-gray-700">Content Creator werden</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/pendra-core/about.html" class="hover:text-indigo-400">Über uns</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
   <main class="max-w-4xl mx-auto px-4 py-16 text-center">
     <p class="text-xl text-gray-300 mb-6">Um ein offizieller Partner zu werden, benötigen wir folgendes:</p>
     <ul class="text-left text-gray-300 space-y-4">
