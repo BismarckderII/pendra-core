@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pendra Core – Community Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-950 text-white font-sans">
+
+  <!-- Header mit großem, zentriertem Logo und Menü -->
+  <header class="bg-gray-900 py-12 shadow-lg text-center">
+    <img src="/pendra-core/pendracore-logo.png" alt="Pendra Core Logo"
+         class="mx-auto mb-6 w-40 h-40 object-contain drop-shadow-lg opacity-90">
+    <h1 class="text-5xl font-bold text-indigo-400">Pendra Core</h1>
+    <p class="text-gray-400 mt-2 text-lg">Die Schnittstelle zwischen Realität und digitalem Raum</p>
+
+    <!-- Navigation mit Dropdown -->
+    <nav class="mt-10">
+      <ul class="flex justify-center space-x-6 text-white font-semibold">
+        <li><a href="/pendra-core/index.html" class="hover:text-indigo-400">Home</a></li>
+        <li class="relative group">
+          <button class="hover:text-indigo-400">Infos ⌄</button>
+          <ul class="absolute hidden group-hover:flex group-focus-within:flex group-focus-within:flex flex-col bg-gray-800 rounded shadow-lg top-12 right-1/2 translate-x-1/2 min-w-[220px] z-10">
+            <li><a href="/pendra-core/partner.html" class="block px-4 py-2 hover:bg-gray-700">Partner-Server</a></li>
+            <li><a href="/pendra-core/partner-werden.html" class="block px-4 py-2 hover:bg-gray-700">Wie wird man Partner?</a></li>
+            <li><a href="/pendra-core/content-creator.html" class="block px-4 py-2 hover:bg-gray-700">Content Creator werden</a></li>
+          </ul>
+        </li>
+        <li><a href="/pendra-core/about.html" class="hover:text-indigo-400">Über uns</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hauptinhalt: Drei Karten -->
+  <main class="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-3 gap-10">
+
+    <!-- Discord Box -->
+    <a href="https://discord.gg/pendracore" target="_blank"
+       class="transition transform hover:scale-105 duration-300 bg-indigo-600 rounded-2xl p-10 text-center shadow-lg">
+      <h2 class="text-2xl font-bold mb-4">🛰️ Discord</h2>
+      <p class="text-lg">Tritt unserem Netzwerk bei. Austausch, Projekte, Organisation.</p>
+    </a>
+
+    <!-- Minecraft Box -->
+    <div onclick="copyIP()"
+         class="cursor-pointer transition transform hover:scale-105 duration-300 bg-green-600 rounded-2xl p-10 text-center shadow-lg">
+      <h2 class="text-2xl font-bold mb-4">🖥️ Minecraft Server</h2>
+      <p class="text-lg">Adresse kopieren:<br><code id="mc-ip">pendracore.g-portal.works</code></p>
+      <p id="copied-msg" class="text-sm mt-2 text-white hidden">✔️ IP kopiert!</p>
+    </div>
+
+    <!-- Info Box -->
+    <a href="/pendra-core/about.html"
+       class="transition transform hover:scale-105 duration-300 bg-gray-700 rounded-2xl p-10 text-center shadow-lg">
+      <h2 class="text-2xl font-bold mb-4">🔗 Über Pendra Core</h2>
+      <p class="text-lg">Erfahre mehr über die Idee hinter der Community & unsere digitale Infrastruktur.</p>
+    </a>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-center text-gray-400 py-6">
+    © 2025 Pendra Core – Entwickelt von [Dein Name oder Team]
+  </footer>
+
+  <!-- Kopierfunktion -->
+  <script>
+    function copyIP() {
+      const ip = "pendracore.g-portal.works";
+      navigator.clipboard.writeText(ip).then(() => {
+        document.getElementById("copied-msg").classList.remove("hidden");
+        setTimeout(() => {
+          document.getElementById("copied-msg").classList.add("hidden");
+        }, 2000);
+      });
+    }
+  </script>
+
+</body>
+</html>
