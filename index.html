@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pendra Core Community - News & Events</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Neon Background -->
+  <div class="neon-bg">
+    <div class="neon-orb orb1"></div>
+    <div class="neon-orb orb2"></div>
+    <div class="neon-orb orb3"></div>
+  </div>
+
+  <header>
+    <img src="logo.png" alt="Pendra Core Logo">
+    <h1 id="title">Pendra Core Community</h1>
+    <button id="lang-switch">EN</button>
+  </header>
+
+  <nav>
+    <a href="index.html" id="nav-news">News & Events</a>
+    <a href="about.html" id="nav-about">Über Uns</a>
+    <a href="partners.html" id="nav-partners">Partner</a>
+    <a href="https://discord.gg/TJnJRvGfz3" target="_blank" id="nav-discord">Discord</a>
+  </nav>
+
+  <section>
+    <h2 id="news-headline">News</h2>
+    <div id="news-list">
+      <div class="news-item">
+        <h3>Willkommen bei Pendra Core</h3>
+        <p>Unsere Community startet offiziell ins Jahr 2025! 🎉</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 id="events-headline">Events</h2>
+    <div id="events-list">
+      <div class="news-item">
+        <h3>Community Opening Event</h3>
+        <p>Feier mit uns den Start der Community – Datum folgt!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Admin Login -->
+  <section id="admin-section">
+    <h2>Admin Login</h2>
+    <input type="password" id="admin-pass" placeholder="Passwort eingeben">
+    <button onclick="checkLogin()">Login</button>
+
+    <div id="admin-panel" style="display:none; margin-top:1rem;">
+      <h3>News hinzufügen</h3>
+      <input type="text" id="news-title" placeholder="Titel"><br><br>
+      <textarea id="news-text" placeholder="Text"></textarea><br><br>
+      <button onclick="addNews()">News hinzufügen</button>
+
+      <h3 style="margin-top:2rem;">Event hinzufügen</h3>
+      <input type="text" id="event-title" placeholder="Titel"><br><br>
+      <textarea id="event-text" placeholder="Beschreibung"></textarea><br><br>
+      <button onclick="addEvent()">Event hinzufügen</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Pendra Core</p>
+  </footer>
+
+  <script>
+    // Sprachumschalter (DE/EN)
+    const translations = {
+      de: {
+        title: "Pendra Core Community",
+        navNews: "News & Events",
+        navAbout: "Über Uns",
+        navPartners: "Partner",
+        navDiscord: "Discord",
+        newsHeadline: "News",
+        eventsHeadline: "Events"
+      },
+      en: {
+        title: "Pendra Core Community",
+        navNews: "News & Events",
+        navAbout: "About Us",
+        navPartners: "Partners",
+        navDiscord: "Discord",
+        newsHeadline: "News",
+        eventsHeadline: "Events"
+      }
+    };
+
+    let currentLang = "de";
+    const switchBtn = document.getElementById("lang-switch");
+
+    switchBtn.addEventListener("click", () => {
+      currentLang = currentLang === "de" ? "en" : "de";
+      const t = translations[currentLang];
+      document.getElementById("title").textContent = t.title;
+      document.getElementById("nav-news").textContent = t.navNews;
+      document.getElementById("nav-about").textContent = t.navAbout;
+      document.getElementById("nav-partners").textContent = t.navPartners;
+      document.getElementById("nav-discord").textContent = t.navDiscord;
+      document.getElementById("news-headline").textContent = t.newsHeadline;
+      document.getElementById("events-headline").textContent = t.eventsHeadline;
+      switchBtn.textContent = currentLang === "de" ? "EN" : "DE";
+    });
+
+    // Admin Login
+    function checkLogin() {
+      const pass = document.getElementById("admin-pass").value;
+      if(pass === "admin123") {
+        document.getElementById("admin-panel").style.display = "block";
+        alert("Login erfolgreich!");
+      } else {
+        alert("Falsches Passwort!");
+      }
+    }
+
+    // News hinzufügen
+    function addNews() {
+      const title = document.getElementById("news-title").value;
+      const text = document.getElementById("news-text").value;
+      if(title && text) {
+        const div = document.createElement("div");
+        div.classList.add("news-item");
+        div.innerHTML = `<h3>${title}</h3><p>${text}</p>`;
+        document.getElementById("news-list").appendChild(div);
+        document.getElementById("news-title").value = "";
+        document.getElementById("news-text").value = "";
+      }
+    }
+
+    // Event hinzufügen
+    function addEvent() {
+      const title = document.getElementById("event-title").value;
+      const text = document.getElementById("event-text").value;
+      if(title && text) {
+        const div = document.createElement("div");
+        div.classList.add("news-item");
+        div.innerHTML = `<h3>${title}</h3><p>${text}</p>`;
+        document.getElementById("events-list").appendChild(div);
+        document.getElementById("event-title").value = "";
+        document.getElementById("event-text").value = "";
+      }
+    }
+
+    // Pulse-Effekt für Nav-Links beim Klick
+    document.querySelectorAll("nav a").forEach(link => {
+      link.addEventListener("click", () => {
+        link.classList.add("pulse");
+        setTimeout(() => link.classList.remove("pulse"), 600);
+      });
+    });
+  </script>
+</body>
+</html>

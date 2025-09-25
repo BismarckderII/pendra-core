@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pendra Core Community - Partner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Neon Background -->
+  <div class="neon-bg">
+    <div class="neon-orb orb1"></div>
+    <div class="neon-orb orb2"></div>
+    <div class="neon-orb orb3"></div>
+  </div>
+
+  <header>
+    <img src="logo.png" alt="Pendra Core Logo">
+    <h1 id="title">Pendra Core Community</h1>
+    <button id="lang-switch">EN</button>
+  </header>
+
+  <nav>
+    <a href="index.html" id="nav-news">News</a>
+    <a href="about.html" id="nav-about">Über Uns</a>
+    <a href="partners.html" id="nav-partners">Partner</a>
+    <a href="https://discord.gg/TJnJRvGfz3" target="_blank" id="nav-discord">Discord</a>
+  </nav>
+
+  <section>
+    <h2 id="partners-headline">Partner-Server</h2>
+    <p id="partners-intro">Hier findest du die Communities, mit denen wir zusammenarbeiten:</p>
+
+    <div class="partner">
+      <h3 id="partner1-title">Tavernen Werbungs HUB</h3>
+      <p id="partner1-text">
+        Seit Ende 2024 – Zweitserver der Tavernen-Gruppe mit Fokus auf Werbung.<br><br>
+        ▻ Zwei Werbesysteme: Quick-Post & feste Partnerschaft<br>
+        ▻ Leute finden (Such-Kategorie)<br>
+        ▻ Unsere Favoriten: Server mit dem Tavernen-Stempel<br>
+        ▻ Blacklist: Schutz & Transparenz<br>
+        ▻ Schutz: Bereich für Ü18-Server<br><br>
+        <em>„Bring deine Werbung jetzt zu uns und lass sie in diesem geschützten Rahmen atmen.“</em>
+      </p>
+      <a class="btn" href="https://discord.gg/Hr5JkTkgFu" target="_blank" id="partner1-btn">Zum Discord</a>
+    </div>
+
+    <div class="partner">
+      <h3 id="partner2-title">🌍 Civitas – One Nation, Many Players! 🌍</h3>
+      <p id="partner2-text">
+        In Civitas ist jeder Spieler Teil einer gemeinsamen Nation.<br>
+        Gemeinsam gestaltet ihr Politik, verwaltet Ressourcen und entscheidet die Zukunft.<br><br>
+        ⚖️ Kollektive Entscheidungen – jede Stimme zählt<br>
+        📊 Wirtschaft & Finanzen – Wohlstand gemeinsam aufbauen<br>
+        🤝 Kooperation oder Konflikt – ihr bestimmt den Weg<br>
+        💬 Aktive Community – Diskussion, Roleplay & lebende Simulation<br><br>
+        🚧 Aktuell in Entwicklung – jetzt beitreten und von Anfang an dabei sein!
+      </p>
+      <a class="btn" href="https://discord.gg/7Yes4z7d" target="_blank" id="partner2-btn">Zum Discord</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Pendra Core</p>
+  </footer>
+
+  <script>
+    const translations = {
+      de: {
+        title: "Pendra Core Community",
+        navNews: "News",
+        navAbout: "Über Uns",
+        navPartners: "Partner",
+        navDiscord: "Discord",
+        partnersHeadline: "Partner-Server",
+        partnersIntro: "Hier findest du die Communities, mit denen wir zusammenarbeiten:",
+        partner1Title: "Tavernen Werbungs HUB",
+        partner1Text: `Seit Ende 2024 – Zweitserver der Tavernen-Gruppe mit Fokus auf Werbung.<br><br>
+        ▻ Zwei Werbesysteme: Quick-Post & feste Partnerschaft<br>
+        ▻ Leute finden (Such-Kategorie)<br>
+        ▻ Unsere Favoriten: Server mit dem Tavernen-Stempel<br>
+        ▻ Blacklist: Schutz & Transparenz<br>
+        ▻ Schutz: Bereich für Ü18-Server<br><br>
+        <em>„Bring deine Werbung jetzt zu uns und lass sie in diesem geschützten Rahmen atmen.“</em>`,
+        partner1Btn: "Zum Discord",
+        partner2Title: "🌍 Civitas – One Nation, Many Players! 🌍",
+        partner2Text: `In Civitas ist jeder Spieler Teil einer gemeinsamen Nation.<br>
+        Gemeinsam gestaltet ihr Politik, verwaltet Ressourcen und entscheidet die Zukunft.<br><br>
+        ⚖️ Kollektive Entscheidungen – jede Stimme zählt<br>
+        📊 Wirtschaft & Finanzen – Wohlstand gemeinsam aufbauen<br>
+        🤝 Kooperation oder Konflikt – ihr bestimmt den Weg<br>
+        💬 Aktive Community – Diskussion, Roleplay & lebende Simulation<br><br>
+        🚧 Aktuell in Entwicklung – jetzt beitreten und von Anfang an dabei sein!`,
+        partner2Btn: "Zum Discord"
+      },
+      en: {
+        title: "Pendra Core Community",
+        navNews: "News",
+        navAbout: "About Us",
+        navPartners: "Partners",
+        navDiscord: "Discord",
+        partnersHeadline: "Partner Servers",
+        partnersIntro: "Here you can find the communities we collaborate with:",
+        partner1Title: "Tavern Advertising HUB",
+        partner1Text: `Since late 2024 – Second server of the Tavern group, focused on advertising.<br><br>
+        ▻ Two advertising systems: Quick-Post & fixed partnerships<br>
+        ▻ Find people (search category)<br>
+        ▻ Our favorites: Servers with the Tavern seal<br>
+        ▻ Blacklist: Protection & transparency<br>
+        ▻ Protection: Area for 18+ servers<br><br>
+        <em>"Bring your ads to us and let them breathe in this safe environment."</em>`,
+        partner1Btn: "Join Discord",
+        partner2Title: "🌍 Civitas – One Nation, Many Players! 🌍",
+        partner2Text: `In Civitas, every player is part of one shared nation.<br>
+        Together you shape politics, manage resources, and decide the future.<br><br>
+        ⚖️ Collective decisions – every vote counts<br>
+        📊 Economy & finances – build prosperity as a community<br>
+        🤝 Cooperation or conflict – you decide the path<br>
+        💬 Active community – discussion, roleplay & living simulation<br><br>
+        🚧 Currently in development – join now and be among the first citizens!`,
+        partner2Btn: "Join Discord"
+      }
+    };
+
+    let currentLang = "de";
+    const switchBtn = document.getElementById("lang-switch");
+    switchBtn.addEventListener("click", () => {
+      currentLang = currentLang === "de" ? "en" : "de";
+      const t = translations[currentLang];
+      document.getElementById("title").textContent = t.title;
+      document.getElementById("nav-news").textContent = t.navNews;
+      document.getElementById("nav-about").textContent = t.navAbout;
+      document.getElementById("nav-partners").textContent = t.navPartners;
+      document.getElementById("nav-discord").textContent = t.navDiscord;
+      document.getElementById("partners-headline").textContent = t.partnersHeadline;
+      document.getElementById("partners-intro").textContent = t.partnersIntro;
+      document.getElementById("partner1-title").textContent = t.partner1Title;
+      document.getElementById("partner1-text").innerHTML = t.partner1Text;
+      document.getElementById("partner1-btn").textContent = t.partner1Btn;
+      document.getElementById("partner2-title").textContent = t.partner2Title;
+      document.getElementById("partner2-text").innerHTML = t.partner2Text;
+      document.getElementById("partner2-btn").textContent = t.partner2Btn;
+      switchBtn.textContent = currentLang === "de" ? "EN" : "DE";
+    });
+  </script>
+</body>
+</html>

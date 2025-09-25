@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pendra Core Community - Über Uns</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Neon Background -->
+  <div class="neon-bg">
+    <div class="neon-orb orb1"></div>
+    <div class="neon-orb orb2"></div>
+    <div class="neon-orb orb3"></div>
+  </div>
+
+  <header>
+    <img src="logo.png" alt="Pendra Core Logo">
+    <h1 id="title">Pendra Core Community</h1>
+    <button id="lang-switch">EN</button>
+  </header>
+
+  <nav>
+    <a href="index.html" id="nav-news">News</a>
+    <a href="about.html" id="nav-about">Über Uns</a>
+    <a href="partners.html" id="nav-partners">Partner</a>
+    <a href="https://discord.gg/TJnJRvGfz3" target="_blank" id="nav-discord">Discord</a>
+  </nav>
+
+  <section>
+    <div class="content-box">
+      <h2 id="about-headline">Über Uns</h2>
+      <p id="about-text">
+        Pendra Core ist eine Community, die reale und digitale Welten miteinander verbindet.  
+        Bei uns geht es um Austausch, Gaming, Kreativität und gemeinsame Projekte.  
+        Wir sind offen für neue Ideen, arbeiten an spannenden Konzepten und geben Raum für eigene Initiativen.  
+        Egal ob Gaming, kreativer Austausch oder Community-Events – bei uns findest du Gleichgesinnte.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Pendra Core</p>
+  </footer>
+
+  <script>
+    const translations = {
+      de: {
+        title: "Pendra Core Community",
+        navNews: "News",
+        navAbout: "Über Uns",
+        navPartners: "Partner",
+        navDiscord: "Discord",
+        aboutHeadline: "Über Uns",
+        aboutText: `Pendra Core ist eine Community, die reale und digitale Welten miteinander verbindet.  
+        Bei uns geht es um Austausch, Gaming, Kreativität und gemeinsame Projekte.  
+        Wir sind offen für neue Ideen, arbeiten an spannenden Konzepten und geben Raum für eigene Initiativen.  
+        Egal ob Gaming, kreativer Austausch oder Community-Events – bei uns findest du Gleichgesinnte.`
+      },
+      en: {
+        title: "Pendra Core Community",
+        navNews: "News",
+        navAbout: "About Us",
+        navPartners: "Partners",
+        navDiscord: "Discord",
+        aboutHeadline: "About Us",
+        aboutText: `Pendra Core is a community that connects the real and digital worlds.  
+        We focus on exchange, gaming, creativity, and joint projects.  
+        We are open to new ideas, work on exciting concepts, and provide space for individual initiatives.  
+        Whether gaming, creative collaboration, or community events – here you’ll find like-minded people.`
+      }
+    };
+
+    let currentLang = "de";
+    const switchBtn = document.getElementById("lang-switch");
+    switchBtn.addEventListener("click", () => {
+      currentLang = currentLang === "de" ? "en" : "de";
+      const t = translations[currentLang];
+      document.getElementById("title").textContent = t.title;
+      document.getElementById("nav-news").textContent = t.navNews;
+      document.getElementById("nav-about").textContent = t.navAbout;
+      document.getElementById("nav-partners").textContent = t.navPartners;
+      document.getElementById("nav-discord").textContent = t.navDiscord;
+      document.getElementById("about-headline").textContent = t.aboutHeadline;
+      document.getElementById("about-text").textContent = t.aboutText;
+      switchBtn.textContent = currentLang === "de" ? "EN" : "DE";
+    });
+  </script>
+</body>
+</html>
