@@ -2,39 +2,132 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pendra Core Community - News & Events</title>
+  <title>Pendra Core – News & Events</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Neon Background -->
-  <div class="neon-bg">
-    <div class="neon-orb orb1"></div>
-    <div class="neon-orb orb2"></div>
-    <div class="neon-orb orb3"></div>
-  </div>
-
   <header>
-    <img src="logo.png" alt="Pendra Core Logo">
-    <h1 id="title">Pendra Core Community</h1>
-    <button id="lang-switch">EN</button>
+    <img src="logo.png" alt="Pendra Core Logo" class="logo">
+    <nav>
+      <a href="index.html">News & Events</a>
+      <a href="about.html">About Us</a>
+      <a href="partners.html">Partners</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="index.html" id="nav-news">News & Events</a>
-    <a href="about.html" id="nav-about">Über Uns</a>
-    <a href="partners.html" id="nav-partners">Partner</a>
-    <a href="https://discord.gg/TJnJRvGfz3" target="_blank" id="nav-discord">Discord</a>
-  </nav>
+  <main>
+    <section class="box">
+      <h2>📰 News</h2>
+      <div id="news-list"></div>
+    </section>
 
-  <section>
-    <h2 id="news-headline">News</h2>
-    <div id="news-list">
-      <div class="news-item">
-        <h3>Willkommen bei Pendra Core</h3>
-        <p>Unsere Community startet offiziell ins Jahr 2025! 🎉</p>
+    <section class="box">
+      <h2>📅 Events</h2>
+      <div id="events-list"></div>
+    </section>
+
+    <section class="box">
+      <h2>🔑 Admin Login</h2>
+      <div id="admin-login">
+        <input type="password" id="admin-password" placeholder="Passwort eingeben">
+        <button onclick="checkAdmin()">Login</button>
       </div>
-    </div>
+      <div id="admin-panel" style="display:none;">
+        <h3>Neue News hinzufügen</h3>
+        <input type="text" id="news-title" placeholder="Titel">
+        <textarea id="news-text" placeholder="Text"></textarea>
+        <button onclick="addNews()">Speichern</button>
+
+        <h3>Neues Event hinzufügen</h3>
+        <input type="text" id="event-title" placeholder="Titel">
+        <textarea id="event-text" placeholder="Beschreibung"></textarea>
+        <button onclick="addEvent()">Speichern</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Pendra Core Community © 2025</p>
+  </footer>
+
+  <script type="module">
+    // Firebase SDK laden
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getFirestore, collection, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+    // Deine Firebase Config
+    const firebaseConfig = {
+      apiKey: "AIzaSyD3PrCmuJ2XWcZECvTa-lqkc-8BLzhTDS4",
+      authDomain: "pendra-core.firebaseapp.com",
+      projectId: "pendra-core",
+      storageBucket: "pendra-core.appspot.com",
+      messagingSenderId: "92452360653",
+      appId: "1:92452360653:web:b1fd93a71f9adad65af484"
+    };
+
+    // Init Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // 🔹 News laden
+    async function loadNews() {
+      const querySnapshot = await getDocs(collection(db, "news"));
+      querySnapshot.forEach((doc) => {
+        const data = doc.data();
+        const div = document.createElement("div");
+        div.classList.add("entry");
+        div.innerHTML = `<h3>${data.title}</h3><p>${data.text}</p>`;
+        document.getElementById("news-list").appendChild(div);
+      });
+    }
+
+    // 🔹 Events laden
+    async function loadEvents() {
+      const querySnapshot = await getDocs(collection(db, "events"));
+      querySnapshot.forEach((doc) => {
+        const data = doc.data();
+        const div = document.createElement("div");
+        div.classList.add("entry");
+        div.innerHTML = `<h3>${data.title}</h3><p>${data.text}</p>`;
+        document.getElementById("events-list").appendChild(div);
+      });
+    }
+
+    // 🔑 Admin Login
+    function checkAdmin() {
+      const pw = document.getElementById("admin-password").value;
+      if (pw === "pendra2025") {  // Passwort kannst du ändern!
+        document.getElementById("admin-login").style.display = "none";
+        document.getElementById("admin-panel").style.display = "block";
+      } else {
+        alert("Falsches Passwort!");
+      }
+    }
+
+    // 🔹 Neue News speichern
+    async function addNews() {
+      const title = document.getElementById("news-title").value;
+      const text = document.getElementById("news-text").value;
+      await addDoc(collection(db, "news"), { title, text });
+      alert("News hinzugefügt!");
+      location.reload();
+    }
+
+    // 🔹 Neues Event speichern
+    async function addEvent() {
+      const title = document.getElementById("event-title").value;
+      const text = document.getElementById("event-text").value;
+      await addDoc(collection(db, "events"), { title, text });
+      alert("Event hinzugefügt!");
+      location.reload();
+    }
+
+    // Beim Laden Inhalte holen
+    loadNews();
+    loadEvents();
+  </script>
+</body>
+</html>    </div>
   </section>
 
   <section>
