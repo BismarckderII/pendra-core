@@ -1,12 +1,12 @@
 {
-  "nav_about": "About",
+  "nav_about": "Über uns",
   "nav_team": "Team",
   "nav_events": "Events",
-  "nav_news": "News",
-  "about_text": "Welcome to PendraCore — connecting communities and creativity in one place.",
+  "nav_news": "Neuigkeiten",
+  "about_text": "Willkommen bei PendraCore — wir verbinden Communities und Kreativität an einem Ort.",
   "team_title": "Team",
   "events_title": "Events",
-  "events_text": "🎁 Upcoming: Digital Secret Santa! Vote soon for the event date. Only digital gifts – no addresses needed!",
-  "news_title": "News",
-  "news_text": "📢 PendraCore goes International! After an internal team meeting, we’re expanding globally. Integrated servers: Civitas, TheSphere, Diamantenschloss ✅. There will be a dedicated German channel, but the main area will stay in English."
+  "events_text": "🎁 Bald: Digitales Wichteln! Die Abstimmung für das Datum startet bald. Nur digitale Geschenke – keine Adressen nötig!",
+  "news_title": "Neuigkeiten",
+  "news_text": "📢 PendraCore wird international! Nach einer internen Teambesprechung weiten wir uns global aus. Integrierte Server: Civitas, TheSphere, Diamantenschloss ✅. Es wird einen deutschen Kanal geben, aber der Hauptbereich bleibt auf Englisch."
 }
