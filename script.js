@@ -20,5 +20,10 @@ document.getElementById('language-switcher').addEventListener('change', e => {
   currentLang = e.target.value;
   loadLanguage(currentLang);
 });
+document.getElementById("menu-toggle").addEventListener("click", () => {
+  document.getElementById("nav-links").classList.toggle("active");
+});
+
 
 loadLanguage(currentLang);
+
