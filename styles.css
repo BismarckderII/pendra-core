@@ -26,6 +26,7 @@ body {
   width: 140px;
   height: auto;
   margin-bottom: 0.5rem;
+  filter: drop-shadow(0 0 20px rgba(246,139,30,0.3));
 }
 
 .main-header h1 {
@@ -125,7 +126,7 @@ nav li:hover a {
   text-shadow: 0 0 10px rgba(246,139,30,0.5);
 }
 
-/* === DISCORD NAV BUTTON === */
+/* Discord Icon */
 .discord-nav img {
   width: 20px;
   height: 20px;
@@ -137,7 +138,7 @@ nav li:hover a {
   filter: drop-shadow(0 0 8px rgba(246,139,30,0.6));
 }
 
-/* === LANGUAGE SWITCHER === */
+/* Language Switcher */
 #language-switcher {
   appearance: none;
   background: linear-gradient(145deg, #151515, #0b0b0b);
@@ -150,8 +151,6 @@ nav li:hover a {
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  position: relative;
-  z-index: 2;
   background-image: linear-gradient(145deg, #151515, #0b0b0b),
     url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='%23f68b1e' viewBox='0 0 20 20'><path d='M5 7l5 5 5-5z'/></svg>");
   background-repeat: no-repeat;
@@ -165,7 +164,7 @@ nav li:hover a {
   box-shadow: 0 0 25px rgba(246,139,30,0.25);
 }
 
-/* === RESPONSIVE NAVBAR === */
+/* Responsive Nav */
 .menu-toggle {
   display: none;
   background: none;
@@ -223,19 +222,83 @@ nav li:hover a {
 /* === MAIN CONTENT === */
 main {
   padding: 2rem 1.5rem;
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
 }
 
+/* Section Cards */
 section {
-  margin-bottom: 3rem;
+  background: linear-gradient(145deg, #111, #0b0b0b);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 16px;
+  padding: 1.8rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(246,139,30,0.05), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+section:hover::before {
+  opacity: 1;
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(246,139,30,0.1);
 }
 
 h2 {
   color: var(--accent);
   text-shadow: 0 0 10px rgba(246,139,30,0.4);
+  border-bottom: 1px solid rgba(246,139,30,0.15);
+  padding-bottom: 0.4rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.6rem;
+}
+
+p, ul {
+  line-height: 1.6;
+  color: #d1d1d1;
+  position: relative;
+  z-index: 2;
+}
+
+ul {
+  padding-left: 1.5rem;
+}
+
+strong {
+  color: var(--accent);
+}
+
+/* Fade Animation */
+.fade-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* === FOOTER === */
