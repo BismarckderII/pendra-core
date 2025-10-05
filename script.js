@@ -3,7 +3,7 @@ const langData = {};
 let currentLang = 'en';
 
 async function loadLanguage(lang) {
-  const response = await fetch(`lang/${lang}.json`);
+  const res = await fetch(`./lang/${lang}.json`);
   const data = await response.json();
   Object.assign(langData, data);
   updateText();
@@ -56,3 +56,4 @@ particlesJS("particles-js", {
   },
   retina_detect: true
 });
+
