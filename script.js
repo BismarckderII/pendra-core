@@ -1,3 +1,9 @@
+// GitHub Pages fix for fetch() with JSON
+if (window.location.protocol === "file:" || window.location.hostname.includes("github.io")) {
+  console.log("Running on GitHub Pages or local file system.");
+}
+
+
 /* ===== Language Loader ===== */
 const langData = {};
 let currentLang = 'en';
@@ -56,4 +62,5 @@ particlesJS("particles-js", {
   },
   retina_detect: true
 });
+
 
