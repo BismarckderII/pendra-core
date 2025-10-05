@@ -1,50 +1,58 @@
-// Mobile nav toggle
-document.getElementById("menu-toggle").addEventListener("click", () => {
-  document.getElementById("nav-links").classList.toggle("active");
-});
-
-// Scroll fade animation
-const fadeSections = document.querySelectorAll(".fade-section");
-const revealOnScroll = () => {
-  const trigger = window.innerHeight * 0.8;
-  fadeSections.forEach(sec => {
-    const top = sec.getBoundingClientRect().top;
-    if (top < trigger) sec.classList.add("visible");
-  });
-};
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
-
-// Language switcher
-const langSelect = document.getElementById("language-switcher");
+/* ===== Language Loader ===== */
+const langData = {};
+let currentLang = 'en';
 
 async function loadLanguage(lang) {
-  try {
-    const res = await fetch(`lang/${lang}.json`);
-    const data = await res.json();
-
-    document.querySelector('[href="#about"]').textContent = data.nav_about;
-    document.querySelector('[href="#team"]').textContent = data.nav_team;
-    document.querySelector('[href="#events"]').textContent = data.nav_events;
-    document.querySelector('[href="#news"]').textContent = data.nav_news;
-
-    document.querySelector("#about h2").textContent = data.nav_about;
-    document.querySelector("#about p").textContent = data.about_text;
-
-    document.querySelector("#team h2").textContent = data.team_title;
-    document.querySelector("#events h2").textContent = data.events_title;
-    document.querySelector("#events p").textContent = data.events_text;
-
-    document.querySelector("#news h2").textContent = data.news_title;
-    document.querySelector("#news p").textContent = data.news_text;
-  } catch (err) {
-    console.error("Language load error:", err);
-  }
+  const response = await fetch(`lang/${lang}.json`);
+  const data = await response.json();
+  Object.assign(langData, data);
+  updateText();
 }
 
-// Default = English
-loadLanguage("en");
+function updateText() {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    const key = el.getAttribute('data-lang');
+    if (langData[key]) el.innerText = langData[key];
+  });
+}
 
-langSelect.addEventListener("change", e => {
-  loadLanguage(e.target.value);
+document.getElementById('language-switcher').addEventListener('change', e => {
+  currentLang = e.target.value;
+  loadLanguage(currentLang);
+});
+
+loadLanguage(currentLang);
+
+/* ===== Team Section ===== */
+const team = [
+  { name: "Alex", role: "Founder / Developer" },
+  { name: "Mira", role: "Community Manager" },
+  { name: "Jay", role: "Designer" },
+  { name: "Lynn", role: "Event Coordinator" }
+];
+
+const teamContainer = document.getElementById('team-container');
+team.forEach(member => {
+  const div = document.createElement('div');
+  div.classList.add('team-member');
+  div.innerHTML = `<h3>${member.name}</h3><p>${member.role}</p>`;
+  teamContainer.appendChild(div);
+});
+
+/* ===== Particle Background ===== */
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 60 },
+    color: { value: "#f68b1e" },
+    shape: { type: "circle" },
+    opacity: { value: 0.5 },
+    size: { value: 3 },
+    move: { enable: true, speed: 1, direction: "none", out_mode: "out" },
+    line_linked: { enable: true, distance: 120, color: "#f68b1e", opacity: 0.2, width: 1 }
+  },
+  interactivity: {
+    events: { onhover: { enable: true, mode: "repulse" } },
+    modes: { repulse: { distance: 100, duration: 0.4 } }
+  },
+  retina_detect: true
 });
