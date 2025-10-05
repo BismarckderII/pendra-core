@@ -3,10 +3,35 @@
   "nav_team": "Team",
   "nav_events": "Events",
   "nav_news": "News",
-  "about_text": "Welcome to PendraCore — connecting communities and creativity in one place.",
-  "team_title": "Team",
+
+  "about_title": "About Pendra Core",
+  "about_text": "Pendra Core connects creative, technical, and digital minds — focused on collaboration, integrity, and growth.",
+
+  "team_title": "Team Hierarchy",
   "events_title": "Events",
-  "events_text": "🎁 Upcoming: Digital Secret Santa! Vote soon for the event date. Only digital gifts – no addresses needed!",
+  "events_coming": "Upcoming events will appear here soon.",
   "news_title": "News",
-  "news_text": "📢 PendraCore goes International! After an internal team meeting, we’re expanding globally. Integrated servers: Civitas, TheSphere, Diamantenschloss ✅. There will be a dedicated German channel, but the main area will stay in English."
+  "news_coming": "Latest updates will appear here soon.",
+
+  "news_announce_title": "📢 PendraCore International Announcement",
+  "news_intro": "We are pleased to announce that PendraCore is becoming International! This decision was made during an internal team meeting.",
+  "news_ticket_title": "Feedback & Contact",
+  "news_ticket_text": "If you have any complaints or feedback, please open a ticket in #support or contact the management directly via DM.",
+  "news_server_title": "Servers joining PendraCore",
+  "news_server1": "Civitas",
+  "news_server2": "TheSphere",
+  "news_server3": "Diamantenschloss (already integrated)",
+  "news_structure_title": "Structure",
+  "news_structure_text": "There will definitely be a German section, but the main area will be in English.",
+  "news_signature": "– The PendraCore Team"
+  ,
+  "event_secret_title": "🎁 Digital Secret Santa",
+  "event_secret_intro": "The community will soon vote for the official date of our Digital Secret Santa event!",
+  "event_secret_rules_title": "Rules",
+  "event_secret_rule1": "Only digital gifts are allowed (no physical shipping).",
+  "event_secret_rule2": "No addresses or personal info will ever be required.",
+  "event_secret_rule3": "Gifts can be anything digital — art, games, codes, files, etc.",
+  "event_secret_rule4": "Voting for the event date will open soon in Discord.",
+  "event_secret_footer": "– PendraCore Team"
+
 }
