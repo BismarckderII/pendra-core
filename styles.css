@@ -268,6 +268,54 @@ nav li:hover a {
   text-shadow: 0 0 10px rgba(246,139,30,0.5);
 }
 
+/* === DISCORD NAV BUTTON === */
+.discord-nav {
+  background: linear-gradient(145deg, #1a1a1a, #0b0b0b);
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding: 0.8rem 1.4rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.discord-nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #b0b0b0;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.discord-nav img {
+  width: 20px;
+  height: 20px;
+  filter: drop-shadow(0 0 4px rgba(88,101,242,0.6));
+  transition: all 0.3s ease;
+}
+
+/* Hover-Effekte */
+.discord-nav:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 0 20px rgba(88,101,242,0.4);
+  border-color: rgba(88,101,242,0.3);
+}
+
+.discord-nav:hover img {
+  filter: drop-shadow(0 0 8px rgba(246,139,30,0.6));
+}
+
+.discord-nav:hover a {
+  color: var(--accent);
+  text-shadow: 0 0 10px rgba(246,139,30,0.5);
+}
+
+
 /* === LANGUAGE SWITCHER === */
 #language-switcher {
   background: linear-gradient(145deg, #151515, #0b0b0b);
@@ -650,3 +698,4 @@ footer p span {
     margin-top: 0.8rem;
   }
 }
+
