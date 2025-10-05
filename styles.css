@@ -702,3 +702,44 @@ footer p span {
     margin-top: 0.8rem;
   }
 }
+/* === MOBILE ONLY VERSION === */
+@media (max-width: 768px) {
+  /* Desktop Navbar ausblenden */
+  nav ul {
+    display: none;
+  }
+
+  /* Alternative mobile Version */
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(10, 10, 10, 0.95);
+    border-top: 1px solid rgba(246,139,30,0.2);
+    padding: 1rem;
+    gap: 1rem;
+    position: relative;
+    z-index: 9999;
+  }
+
+  .mobile-nav a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+
+  .mobile-nav a:hover {
+    color: #fff;
+    text-shadow: 0 0 8px rgba(246,139,30,0.7);
+  }
+}
+
+/* Desktop – mobile Variante ausblenden */
+@media (min-width: 769px) {
+  .mobile-nav {
+    display: none;
+  }
+}
+
+
