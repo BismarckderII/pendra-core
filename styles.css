@@ -78,6 +78,17 @@ nav li {
   cursor: pointer;
   position: relative;
 }
+/* === MOBILE DROPDOWN Z-INDEX FIX === */
+.navbar {
+  position: relative;
+  z-index: 1000; /* Navbar ganz oben */
+}
+
+#nav-links {
+  position: absolute;
+  z-index: 9999; /* Dropdown über allem */
+}
+
 
 nav li::before {
   content: "";
@@ -303,4 +314,5 @@ footer {
   letter-spacing: 0.5px;
   position: relative;
 }
+
 
