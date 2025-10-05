@@ -1,31 +1,9 @@
-/* ===== Language Loader ===== */
-const langData = {};
-let currentLang = 'en';
-
-async function loadLanguage(lang) {
-  const response = await fetch(`lang/${lang}.json`);
-  const data = await response.json();
-  Object.assign(langData, data);
-  updateText();
-}
-
-function updateText() {
-  document.querySelectorAll('[data-lang]').forEach(el => {
-    const key = el.getAttribute('data-lang');
-    if (langData[key]) el.innerText = langData[key];
-  });
-}
-
-document.getElementById('language-switcher').addEventListener('change', e => {
-  currentLang = e.target.value;
-  loadLanguage(currentLang);
-});
 // Mobile nav toggle
 document.getElementById("menu-toggle").addEventListener("click", () => {
   document.getElementById("nav-links").classList.toggle("active");
 });
 
-// Scroll reveal animation
+// Scroll fade animation
 const fadeSections = document.querySelectorAll(".fade-section");
 const revealOnScroll = () => {
   const trigger = window.innerHeight * 0.8;
@@ -37,8 +15,36 @@ const revealOnScroll = () => {
 window.addEventListener("scroll", revealOnScroll);
 revealOnScroll();
 
+// Language switcher
+const langSelect = document.getElementById("language-switcher");
 
+async function loadLanguage(lang) {
+  try {
+    const res = await fetch(`lang/${lang}.json`);
+    const data = await res.json();
 
-loadLanguage(currentLang);
+    document.querySelector('[href="#about"]').textContent = data.nav_about;
+    document.querySelector('[href="#team"]').textContent = data.nav_team;
+    document.querySelector('[href="#events"]').textContent = data.nav_events;
+    document.querySelector('[href="#news"]').textContent = data.nav_news;
 
+    document.querySelector("#about h2").textContent = data.nav_about;
+    document.querySelector("#about p").textContent = data.about_text;
 
+    document.querySelector("#team h2").textContent = data.team_title;
+    document.querySelector("#events h2").textContent = data.events_title;
+    document.querySelector("#events p").textContent = data.events_text;
+
+    document.querySelector("#news h2").textContent = data.news_title;
+    document.querySelector("#news p").textContent = data.news_text;
+  } catch (err) {
+    console.error("Language load error:", err);
+  }
+}
+
+// Default = English
+loadLanguage("en");
+
+langSelect.addEventListener("change", e => {
+  loadLanguage(e.target.value);
+});
