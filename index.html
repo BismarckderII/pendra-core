@@ -1,89 +1,170 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PendraCore</title>
 
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/logo.png" />
 </head>
+
 <body>
+  <!-- HEADER / BANNER -->
+<header class="main-header">
+  <div class="header-overlay">
+    <div class="logo fade-in">
+      <img src="images/logo.png" alt="Pendra Core Logo" />
+      <h1>Pendra Core</h1>
+    </div>
 
-  <header class="main-header">
-    <img src="images/logo.png" alt="PendraCore Logo" class="header-logo">
-    <h1>PendraCore</h1>
+    <nav>
+<nav>
+  <ul>
+    <li><a href="#about" data-lang="nav_about">About</a></li>
+    <li><a href="#team" data-lang="nav_team">Team</a></li>
+    <li><a href="#events" data-lang="nav_events">Events</a></li>
+    <li><a href="#news" data-lang="nav_news">News</a></li>
+    <li class="discord-nav">
+      <a href="https://discord.gg/9GD26fDgTM" target="_blank">
+        <img src="images/discord.svg" alt="Discord" />
+        Discord
+      </a>
+    </li>
+  </ul>
+  <select id="language-switcher">
+    <option value="en">EN</option>
+    <option value="de">DE</option>
+  </select>
+</nav>
 
-    <nav class="navbar">
-      <div class="nav-left">
-        <button class="menu-toggle" id="menu-toggle">☰</button>
-        <ul id="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#team">Team</a></li>
-          <li><a href="#events">Events</a></li>
-          <li><a href="#news">News</a></li>
-          <li class="discord-nav">
-            <a href="https://discord.gg/9GD26fDgTM" target="_blank">
-              <img src="images/discord.svg" alt="Discord" />
-              Discord
-            </a>
-          </li>
-        </ul>
-      </div>
 
-      <div class="nav-right">
-        <select id="language-switcher">
-          <option value="en">EN</option>
-          <option value="de">DE</option>
-        </select>
-      </div>
-    </nav>
-  </header>
+  </div>
+</header>
 
+
+  <!-- MAIN -->
   <main>
-    <section id="about" class="fade-section">
-      <h2>About</h2>
-      <p>Welcome to PendraCore — connecting communities and creativity in one place.</p>
-    </section>
-
-    <section id="team" class="fade-section">
-      <h2>Team</h2>
-      <ul>
-        <li><strong>OnkelBismarck</strong> – Owner / Pendra</li>
-        <li><strong>Rose</strong> – Co-Owner / Helper</li>
-        <li><strong>💜Tig3rMilli💜</strong> – Core Manager / Admin / Soul Manager (Civitas)</li>
-        <li><strong>xxsoxphie (Sisi)</strong> & <strong>Tigerq</strong> – Moderators</li>
-      </ul>
-    </section>
-
-    <section id="events" class="fade-section">
-      <h2>Events</h2>
-      <p>🎁 Upcoming: <strong>Digital Secret Santa</strong>!  
-      Vote soon for the event date.  
-      Only digital gifts – no addresses needed!</p>
-    </section>
-
-    <section id="news" class="fade-section">
-      <h2>News</h2>
-      <p>
-        📢 <strong>PendraCore goes International!</strong><br>
-        After an internal team meeting, we’re expanding globally.<br><br>
-        Integrated servers:<br>
-        - Civitas<br>
-        - TheSphere<br>
-        - Diamantenschloss ✅<br><br>
-        There will be a dedicated German channel,  
-        but the main area will stay in English.<br><br>
-        For complaints or feedback, please open a ticket in the support channel  
-        or DM the Owner directly.
+    <!-- ABOUT SECTION -->
+    <section id="about" class="fade-in">
+      <h2 data-lang="about_title">About Pendra Core</h2>
+      <p data-lang="about_text">
+        Pendra Core connects creative, technical, and digital minds — focused on collaboration, integrity, and growth.
       </p>
     </section>
-  </main>
 
+    <!-- TEAM PYRAMID SECTION -->
+    <section id="team" class="fade-in">
+      <h2 data-lang="team_title">Team Hierarchy</h2>
+
+      <div class="team-pyramid">
+        <!-- Top Tier -->
+        <div class="tier top">
+          <div class="member">
+            <h3>OnkelBismarck</h3>
+            <p>Pendra / Owner</p>
+          </div>
+        </div>
+
+        <!-- Second Tier -->
+        <div class="tier second">
+          <div class="member">
+            <h3>Rose</h3>
+            <p>Co Pendra’s Helper / CO-Owner</p>
+          </div>
+        </div>
+
+        <!-- Third Tier -->
+        <div class="tier third">
+          <div class="member special">
+            <h3>💜Tig3rMilli💜</h3>
+            <p>Core Manager / Admin</p>
+          </div>
+          <div class="member special">
+            <h3>Soul</h3>
+            <p>Manager of Civitas</p>
+          </div>
+        </div>
+
+        <!-- Fourth Tier -->
+        <div class="tier fourth">
+          <div class="member">
+            <h3>xxsoxphie</h3>
+            <p>Moderator</p>
+          </div>
+          <div class="member">
+            <h3>Tigerq</h3>
+            <p>Moderator</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTS -->
+  <section id="events" class="fade-in">
+  <h2 data-lang="events_title">Events</h2>
+
+  <div class="event-card">
+    <h3 data-lang="event_secret_title">🎁 Digital Secret Santa</h3>
+    <p data-lang="event_secret_intro">
+      The community will soon vote for the official date of our Digital Secret Santa event!
+    </p>
+
+    <h4 data-lang="event_secret_rules_title">Rules</h4>
+    <ul>
+      <li data-lang="event_secret_rule1">Only digital gifts are allowed (no physical shipping).</li>
+      <li data-lang="event_secret_rule2">No addresses or personal info will ever be required.</li>
+      <li data-lang="event_secret_rule3">Gifts can be anything digital — art, games, codes, files, etc.</li>
+      <li data-lang="event_secret_rule4">Voting for the event date will open soon in Discord.</li>
+    </ul>
+
+    <p class="signature" data-lang="event_secret_footer">– PendraCore Team</p>
+  </div>
+</section>
+
+
+    <!-- NEWS -->
+<section id="news" class="fade-in">
+  <h2 data-lang="news_title">News</h2>
+
+  <div class="news-card">
+    <h3 data-lang="news_announce_title">📢 PendraCore International Announcement</h3>
+    <p data-lang="news_intro">
+      We are pleased to announce that PendraCore is becoming International!  
+      This decision was made during an internal team meeting.
+    </p>
+
+    <h4 data-lang="news_ticket_title">Feedback & Contact</h4>
+    <p data-lang="news_ticket_text">
+      If you have any complaints or feedback, please open a ticket in  
+      <span class="highlight">#support</span> or contact the management directly via DM.
+    </p>
+
+    <h4 data-lang="news_server_title">Servers joining PendraCore</h4>
+    <ul>
+      <li data-lang="news_server1">Civitas</li>
+      <li data-lang="news_server2">TheSphere</li>
+      <li data-lang="news_server3">Diamantenschloss (already integrated)</li>
+    </ul>
+
+    <h4 data-lang="news_structure_title">Structure</h4>
+    <p data-lang="news_structure_text">
+      There will definitely be a German section, but the main area will be in English.
+    </p>
+
+    <p class="signature" data-lang="news_signature">– The PendraCore Team</p>
+  </div>
+</section>
+
+
+  <!-- FOOTER -->
   <footer>
-    <p>© 2025 PendraCore. All rights reserved.</p>
+    <p>© 2025 Pendra Core | All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- SCRIPT -->
+  <script src="./script.js"></script>
 </body>
 </html>
