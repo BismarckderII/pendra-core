@@ -2,11 +2,37 @@
   "nav_about": "Über uns",
   "nav_team": "Team",
   "nav_events": "Events",
-  "nav_news": "Neuigkeiten",
-  "about_text": "Willkommen bei PendraCore — wir verbinden Communities und Kreativität an einem Ort.",
-  "team_title": "Team",
+  "nav_news": "News",
+
+  "about_title": "Über Pendra Core",
+  "about_text": "Pendra Core verbindet kreative, technische und digitale Köpfe – mit Fokus auf Zusammenarbeit, Integrität und Wachstum.",
+
+  "team_title": "Team Hierarchie",
   "events_title": "Events",
-  "events_text": "🎁 Bald: Digitales Wichteln! Die Abstimmung für das Datum startet bald. Nur digitale Geschenke – keine Adressen nötig!",
+  "events_coming": "Kommende Events werden hier bald angezeigt.",
   "news_title": "Neuigkeiten",
-  "news_text": "📢 PendraCore wird international! Nach einer internen Teambesprechung weiten wir uns global aus. Integrierte Server: Civitas, TheSphere, Diamantenschloss ✅. Es wird einen deutschen Kanal geben, aber der Hauptbereich bleibt auf Englisch."
+  "news_coming": "Die neuesten Updates werden hier bald angezeigt.",
+
+  "news_announce_title": "📢 PendraCore International",
+  "news_intro": "Hiermit kündige ich mit Freuden an, dass PendraCore International wird. Dies wurde in einer internen Team-Besprechung beschlossen.",
+  "news_ticket_title": "Feedback & Kontakt",
+  "news_ticket_text": "Bei Beschwerden bitte intern per #support ein Ticket schreiben oder privat per DM an die Leitung wenden.",
+  "news_server_title": "Folgende Server werden in PendraCore eingefügt:",
+  "news_server1": "Civitas",
+  "news_server2": "TheSphere",
+  "news_server3": "Diamantenschloss (bereits integriert)",
+  "news_structure_title": "Aufbau",
+  "news_structure_text": "Es wird definitiv einen deutschen Kanal geben, jedoch wird der Hauptbereich auf Englisch sein.",
+  "news_signature": "– Das PendraCore Team"
+
+  ,
+  "event_secret_title": "🎁 Digitales Wichteln",
+  "event_secret_intro": "Bald wird abgestimmt, wann unser digitales Wichteln stattfindet!",
+  "event_secret_rules_title": "Regeln",
+  "event_secret_rule1": "Nur digitale Geschenke sind erlaubt (kein physischer Versand).",
+  "event_secret_rule2": "Es werden keine Adressen oder persönlichen Daten benötigt.",
+  "event_secret_rule3": "Geschenke können alles Digitale sein – Kunst, Spiele, Codes, Dateien usw.",
+  "event_secret_rule4": "Die Abstimmung über das Datum findet bald auf Discord statt.",
+  "event_secret_footer": "– PendraCore Team"
+
 }
