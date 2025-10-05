@@ -20,24 +20,31 @@
       <h1>Pendra Core</h1>
     </div>
 
-   <nav>
-  <ul>
-    <li><a href="#about" data-lang="nav_about">About</a></li>
-    <li><a href="#team" data-lang="nav_team">Team</a></li>
-    <li><a href="#events" data-lang="nav_events">Events</a></li>
-    <li><a href="#news" data-lang="nav_news">News</a></li>
-    <li class="discord-nav">
-      <a href="https://discord.gg/9GD26fDgTM" target="_blank">
-        <img src="images/discord.svg" alt="Discord" />
-        Discord
-      </a>
-    </li>
-  </ul>
-  <select id="language-switcher">
-    <option value="en">EN</option>
-    <option value="de">DE</option>
-  </select>
+  <nav class="navbar">
+  <div class="nav-left">
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <ul id="nav-links">
+      <li><a href="#about" data-lang="nav_about">About</a></li>
+      <li><a href="#team" data-lang="nav_team">Team</a></li>
+      <li><a href="#events" data-lang="nav_events">Events</a></li>
+      <li><a href="#news" data-lang="nav_news">News</a></li>
+      <li class="discord-nav">
+        <a href="https://discord.gg/9GD26fDgTM" target="_blank">
+          <img src="images/discord.svg" alt="Discord" />
+          Discord
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="nav-right">
+    <select id="language-switcher">
+      <option value="en">EN</option>
+      <option value="de">DE</option>
+    </select>
+  </div>
 </nav>
+
 
   </div>
 </header>
@@ -166,5 +173,6 @@
   <script src="./script.js"></script>
 </body>
 </html>
+
 
 
